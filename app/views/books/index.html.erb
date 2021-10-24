@@ -1,5 +1,28 @@
 
 
+<table class="table table-striped">
+  
+<h1>Book　detail</h1>
+
+<% @books.each do |book| %>
+<%= attachment_image_tag @users, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+<h1>title</h1>
+<%= book.title %>
+<h1>opinion</h1>
+<%= book.body %>
+<%=link_to("Edit",edit_book_path(book.id)) %>
+
+
+<%=link_to "Delete" ,book_path(book.id), method: :delete %>
+  <% end %>
+end
+
+</table>
+
+
+
+
+
 
 
 

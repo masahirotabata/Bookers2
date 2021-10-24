@@ -1,0 +1,15 @@
+<%=form_with model:@user_info, local:true do |f| %>
+
+<h4>Name</h4>
+<label for="user_image"> 
+<%= f.text_field :name %>
+
+  <h2>画像</h2>
+   <label for="profile_image">ProfileImage</label>
+<%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+
+<h4>Infomation</h4>
+<%= f.text_area :info %>
+
+<%= f.submit "Update User" %>
+<% end %>

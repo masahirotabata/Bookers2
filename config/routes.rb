@@ -8,5 +8,6 @@ get 'homes/about' => 'homes#about'
 #post '/books/:id/update' => 'books#update'
  resources :books
  resources :users
+ resources :post_images, only: [:new, :create, :index, :show, :destroy]
 
 end
