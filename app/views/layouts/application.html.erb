@@ -37,6 +37,7 @@
 <main>
         <p id="notice"></p>
 <div class="container px-5 px-sm-0">
+ <div class="row">
   <div class="col-md-3">
   <table class="table">
   
@@ -58,12 +59,7 @@
     <th><%=link_to("Edit",edit_user_path(@user_info.id)) %></th>
     </tr>
    </tbody>
-   
-  </div>
- </div>
 
-  <div class="row">
-  </div>
  <h2 class="mt-3">New book</h2>
   <form action="/books" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="hJKo+jx131x+NXeZ+4LjtsA6TR3igIZIMLakIyoEdC7vXBM6nnB6x76BP5u5tSGTE+KrtiQHr5hpR0F9sb3Jmw==">
   
@@ -90,10 +86,12 @@
    <div class="form-group">
     <%= f.submit "Create Book" %>
    </div>
+  </div>
    
   </form>
+ 
   <% end %>
-</div>
+
  
 
         

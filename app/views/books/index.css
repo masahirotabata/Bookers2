@@ -1,0 +1,19 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+.col-md-8{
+  position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+}

@@ -1,23 +1,28 @@
 
 
-<table class="table table-striped">
-  
-<h1>Book　detail</h1>
-
-<% @books.each do |book| %>
-<%= attachment_image_tag @users, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-<h1>title</h1>
-<%= book.title %>
-<h1>opinion</h1>
-<%= book.body %>
-<%=link_to("Edit",edit_book_path(book.id)) %>
-
-
-<%=link_to "Delete" ,book_path(book.id), method: :delete %>
+<div class="col-md-8">
+ <h1>Books</h1>
+ <table class="table table-striped">
+ <thead>
+  <tr>
+  <th></th>
+  <th>title</th>
+  <th>opinion</th>
+  </tr>
+ </thead>
+ <tbody>
+   <tr>
+   <% @books.each do |book| %>
+   <td><%= attachment_image_tag @users, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
+   <th><%= book.title %></th>
+   <th><%= book.body %></th>
+   </tr>
+ </tbody>
   <% end %>
-end
+ </table>
+</div>
+</div>
 
-</table>
 
 
 
