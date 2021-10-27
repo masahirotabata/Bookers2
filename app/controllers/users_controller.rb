@@ -2,39 +2,54 @@
 class UsersController < ApplicationController
 
 
+
   def show
-  @user_info = User.find(params[:id])
+  @user = User.find(params[:id])
   @book =  Book.new
-  user = User.find(params[:id])
-  @books = user.books.where(user_id: current_user.id).order(created_at: :desc).limit(1)
+  @books = @user.books
+
+
   end
 
   def index
   @book = Book.new
-  @users = User.all
-  @user_info = User.find(current_user.id)
+  @users = User.all.order(created_at: :desc)
+  @user = current_user
 
   end
-  
+
   def update
   @user = User.find(params[:id])
    if  @user.update(users_params)
-       redirect_to user_path(current_user.id), notice: "Editing was successful"
+      flash[:notice] = "successfully"
+       redirect_to user_path(current_user.id)
+
    else
-     render :edit
+     
+     @user_info = current_user
+    profile_image = nil
+     
+  render:edit
    end
   end
 
- 
-
 
   def edit
-  @user_info = User.find(params[:id])
   
+   @user = User.find(params[:id])
+
+  if @user != current_user
+
+  redirect_to user_path(current_user.id)
+
+  end
+
   end
 
  private
   def users_params
-    params.require(:user).permit(:name, :profile_image,:info)
+    params.require(:user).permit(:name, :profile_image,:introduction)
   end
 end
+
+

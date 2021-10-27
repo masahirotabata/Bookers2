@@ -1,85 +1,4 @@
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-.notice {
-  background-color: green;
-  color: #white;
-  text-align: center;
-}
-
-.alert {
-  background-color: red;
-  color: #white;
-  text-align: center;
-}
-
-header{
-  display: block;
-}
-
-@media (min-width: 992px)
-.navbar-expand.container,{
-  flex-wrap: nowrap;
-}
-
-
-
-.navbar-expand{
-  display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-
-.container {
-
-  display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-.navbar-collapse{
-  flex-basis: 100%;
-    flex-grow: 1;
-    align-items: center;
-    flex-wrap: nowrap;
-
-.navbar-brand{
-  display:flex;
-  display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-    line-height: inherit;
-    white-space: nowrap;
-}
-.nav-bar{
-  position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1rem;
-    flex-wrap: nowrap;
-}
-
-}
-
-.navbar-nav ml-auto{
-  display: flex;
-  flex-direction: row;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-  flex-wrap: nowrap;
-
-  }
-
-  body {
+body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1rem;
@@ -94,24 +13,25 @@ div {
     display: block;
 }
 
-@media (min-width: 768px)
+@media (min-width: 768px){
 .col-md-3 {
     flex: 0 0 25%;
     max-width: 25%;
+ }
 }
-
-.col-md-3{
+  
+.col-md-3{ 
   position: relative;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
   }
-
+  
   .img {
     vertical-align: middle;
     border-style: none;
-    width:63px,
-    height:63px
+    width:63px;
+    height:63px;
 }
 
 .table{
@@ -147,7 +67,6 @@ th{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
-
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -169,10 +88,4 @@ h2 {
 form {
     display: block;
     margin-top: 0em;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
 }

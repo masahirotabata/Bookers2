@@ -1,11 +1,8 @@
-sidebar{
-  display:block;
-}
 *, *::before, *::after {
     box-sizing: border-box;
 }
 .col-md-8{
-  position: relative;
+    position: relative;
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
@@ -18,10 +15,4 @@ table {
     text-indent: initial;
     border-spacing: 2px;
     border-color: grey;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
 }

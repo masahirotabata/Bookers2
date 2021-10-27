@@ -3,46 +3,78 @@ class BooksController < ApplicationController
     @current_user ||= User.find_by(id: session[:user_id])
     end
 
+
+
   def index
    @user_info = User.find(current_user.id)
   @book =  Book.new
-  @user = User.find(current_user.id)
-  @books = @user.books
- #@users = User.all.order
- #@books = @users.books
+  @user = current_user
+  @books = Book.all
+
   end
 
   def show
   @book = Book.new
-  @user = User.find(current_user.id)
   @book_show = Book.find(params[:id])
-
+  @user = @book_show.user
+  #@user = @book_show.users
   end
 
   def edit
     @book = Book.find(params[:id])
    #@book =  user.books.all.find(book.id)
+
+    #@book = Book.find(params[:id])
+    #@user = @book.user
+
+   if @book.user == current_user
+
+     render:edit
+
+   else
+
+    redirect_to books_path
+
+   end
+
   end
+   #if  @user.id == current_user.id
+
+   #@book =  user.books.all.find(book.id)
+   #else
+
+  #@user_info = User.find(current_user.id)
+  #@book =  Book.new
+  #@user = current_user
+  #@books = Book.all
+
+  #redirect_to books_path
+  #end
+
 
   def create
-   @user_info = User.find(current_user.id)
+   #@user_info = User.find(current_user.id)
    @book = Book.new(books_params)
    @book.user_id = current_user.id
    user = User.find(current_user.id)
    @books = user.books
    if @book.save
-      redirect_to user_session_path(id: current_user)
+     flash[:notice] = "successfully"
+      redirect_to book_path(@book.id)
    else
-
-      render 'books/index'
+  @books = Book.all
+  @user = current_user
+      render :index
    end
   end
 
   def update
     @book = Book.find(params[:id])
    if  @book.update(books_params)
-       redirect_to user_path(current_user.id)
+     flash[:notice] = "successfully"
+       redirect_to book_path(@book.id)
    else
+     flash[:notice] = "error"
      render :edit
    end
   end

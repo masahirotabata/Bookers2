@@ -1,18 +1,42 @@
+<!DOCTYPE html>
 
-<body>
-   <% if user_signed_in? %>
-    <% else %>
-    
-        <%= link_to "ログイン", new_user_session_path %>
+<html lang =“ja”>
 
-        <%= link_to "新規登録", new_user_registration_path %>
-      
-        
-      
-    <% end %>
+<head>
 
-    <%= yield %>
-  </body>
-</html>
+<meta charset=“UTF-8”>
 
+<link rel=“top” href = “top.css”>
+
+</head>
+
+
+<main>
+  
+<div class="container">
+ <div class="row">
+  <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
+   <h1>welcome to <i class="fas fa-book"></i><strong>Bookers</strong>  !!</h1>
+
+  
+  <p>you can share and exchange  your opinions , inpressions , and emotions</p> 
+  
+   <p>In  <i class="fas fa-book"></i><strong>Bookers</strong>, </p>
+      <p>you can share and exchange  your opinions , inpressions , and emotions</p>
+      <p> about various books!</p>
+      <div class="btn-wrapper col-10 mx-auto">
+        <div class="row">
+          
+          <%= link_to "Log in", new_user_session_path,class:'btn btn-info btn-sm btn-block mb-3 sign_in text-light' %>
+          </div>
+        </div>
+        <div class="row">
+          <%= link_to "Sign up", new_user_registration_path,class: 'btn btn-success btn-sm btn-block mb-3 sign_up text-light' %> 
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+  
+</main>
 
